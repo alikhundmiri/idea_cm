@@ -9,7 +9,7 @@ def google_search(search_term, api_key, cse_id, **kwargs):
 	res = service.cse().list(q=search_term, cx=cse_id, **kwargs).execute()
 	return res['items']
 
-results = google_search('top 10 tips for watch buying', my_api_key, my_cse_id, num=5)
-
+results = google_search(
+	'top 10 tips for watch buying', my_api_key, my_cse_id, num=10)
 for result in results:
 	pprint.pprint(result)
